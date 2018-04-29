@@ -1,0 +1,21 @@
+version: '3.3'
+volumes:
+  data:
+services:
+  banco:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=senha
+      - MYSQL_DATABASE=flisol2018
+  app:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - banco
+    ports:
+      - 80:80
+    environment:
+      - PMA_ARBITRARY=1

@@ -1,0 +1,19 @@
+curl -sSL https://get.docker.com | sh
+
+# Subir container inicializando no bash
+docker run -it --name flisol2018 debian:stretch /bin/bash
+
+# Sair do container sem derrubá-lo
+<Ctrl+P && Ctrl+Q>
+
+# Subir container em segundo plano
+docker run -itd --name flisol debian:stretch /bin/bash
+
+# Verificar os containeres em execucão
+docker ps [-a,-l]
+
+# Entrar no container rodando em segundo plano
+docker attach <ID>
+
+# Derrubar container
+docker kill <ID || name>

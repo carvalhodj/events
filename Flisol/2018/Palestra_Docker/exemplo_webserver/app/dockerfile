@@ -1,0 +1,11 @@
+# Especifica a imagem base para o projeto
+FROM python:3.6
+
+# Copia a pasta local para uma pasta no docker
+COPY . /app
+
+# Configura o workspace do projeto
+WORKDIR /app
+
+# Instala as dependencia do projeto
+RUN pip install -r ./requirements.txt
